@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-package app;
+package igel.app;
 
-import android.app.Application;
+import android.app.Activity;
+import android.os.Bundle;
 
-public class App extends Application {
+public class MainActivity extends Activity {
 
     @Override
-    public void onCreate() {
-        super.onCreate();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ac_main);
     }
 
 }
