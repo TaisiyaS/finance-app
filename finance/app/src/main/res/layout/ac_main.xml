@@ -29,6 +29,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Общая сумма:"
+        android:textColor="#6d4848"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:singleLine="false"
+        android:gravity="center"
+        android:typeface="monospace" />
 
 </RelativeLayout>
