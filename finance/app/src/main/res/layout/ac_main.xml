@@ -17,6 +17,7 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,59 +27,113 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <TextView
+    <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cash"
+                app:srcCompat="@drawable/ic_local_atm_black_48px"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:id="@+id/imgView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bank"
+                app:srcCompat="@drawable/ic_location_city_black_48px"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:id="@+id/imgView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cashless"
+                app:srcCompat="@drawable/ic_payment_black_48px"
+                tools:ignore="MissingPrefix" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0 руб."
+                android:inputType="numberDecimal"
+                android:maxLength="13"
+                android:ems="7"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                />
+
+            <EditText
+                android:id="@+id/bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0 руб."
+                android:inputType="numberDecimal"
+                android:maxLength="13"
+                android:ems="7"
+                android:textAlignment="center"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/cashless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0 руб."
+                android:inputType="numberDecimal"
+                android:maxLength="13"
+                android:ems="7"
+                android:textAlignment="center"
+                android:textSize="12dp" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:singleLine="false"
         android:text="Общая сумма:"
         android:textColor="#6d4848"
-        android:padding="10dp"
-        android:textStyle="bold"
         android:textSize="20dp"
-        android:singleLine="false"
-        android:gravity="center"
-        android:typeface="monospace"
-        android:id="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:textStyle="bold"
+        android:typeface="monospace" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:padding="10dp"
         android:text="Денег нет"
         android:textColor="#6d4848"
-        android:padding="10dp"
-        android:id="@+id/textView2"
         android:textSize="20dp"
-        android:typeface="monospace"
-        android:layout_alignTop="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:typeface="monospace" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Наличные"
-        android:id="@+id/button"
-        android:typeface="monospace"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/button2"
-        android:clickable="false" />
+    <!--https://youtu.be/0RBa_n6-Gyc?t=373-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Банк"
-        android:id="@+id/button2"
-        android:typeface="monospace"
-        android:layout_alignTop="@+id/button"
-        android:layout_toStartOf="@+id/button3" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Безналичные"
-        android:id="@+id/button3"
-        android:typeface="monospace"
-        android:layout_alignTop="@+id/button2"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
